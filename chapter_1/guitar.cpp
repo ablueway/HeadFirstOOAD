@@ -2,7 +2,7 @@
 Guitar::Guitar() {
 	serialNumber = "NA";
 }
-Guitar::Guitar(std::string sn, double price, std::string builder, std::string model, std::string type, std::string backWood, std::string topWood) {
+Guitar::Guitar(std::string sn, double price, BUILDER builder, std::string model, TYPE type, WOOD backWood, WOOD topWood) {
 	this->serialNumber = sn;
 	this->price = price;
 	this->builder = builder;
@@ -26,7 +26,7 @@ void Guitar::setPrice(float p) {
 	price = p;
 }
 
-std::string Guitar::getBuilder(void) {
+BUILDER Guitar::getBuilder(void) {
 	return builder;
 }
 
@@ -34,14 +34,14 @@ std::string Guitar::getModel(void) {
 	return model;
 }
 
-std::string Guitar::getType(void) {
+TYPE Guitar::getType(void) {
 	return type;
 }
 
-std::string Guitar::getBackWood(void) {
+WOOD Guitar::getBackWood(void) {
 	return backWood;
 }
 
-std::string Guitar::getTopWood(void) {
+WOOD Guitar::getTopWood(void) {
 	return topWood;
 }

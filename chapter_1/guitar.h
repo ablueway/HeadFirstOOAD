@@ -1,27 +1,28 @@
+#pragma once
 #include <string>
-
+#include "enumClass.h"
 class Guitar { 
  private:
 	std::string serialNumber;
 	double price = 0;
-	std::string builder;
+	BUILDER builder;
 	std::string model;
-	std::string type;
-	std::string backWood;
-	std::string  topWood;
+	TYPE type;
+	WOOD backWood;
+	WOOD topWood;
 	
  public:
  	Guitar();
- 	Guitar(std::string sn, double price, std::string builder, std::string model, std::string type, std::string backWood, std::string topWood);
+ 	Guitar(std::string sn, double price, BUILDER builder, std::string model, TYPE type, WOOD backWood, WOOD topWood);
  	~Guitar();
  	
  	std::string getSerialNumber(void);
 	double getPrice(void);
 	void setPrice(float);
 
-	std::string getBuilder(void);
+	BUILDER getBuilder(void);
 	std::string getModel(void);
-	std::string getType(void);
-	std::string getBackWood(void);
-	std::string getTopWood(void);
+	TYPE getType(void);
+	WOOD getBackWood(void);
+	WOOD getTopWood(void);
 };
