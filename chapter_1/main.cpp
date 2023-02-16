@@ -3,6 +3,8 @@
 #include "enumClass.h"
 void initializeInventory(Inventory& inventory) {
 	inventory.addGuitar("V95693", 1499.95, BUILDER::FENDER, "Stratocastor", TYPE::ELECTRIC, WOOD::ALDER, WOOD::ALDER);
+	inventory.addGuitar("V9512", 1549.95, BUILDER::FENDER, "Stratocastor", TYPE::ELECTRIC, WOOD::ALDER, WOOD::ALDER);
+	inventory.addGuitar("N3210", 1321.95, BUILDER::GIBSON, "Stratocastor", TYPE::ACOUSTIC, WOOD::INDIAN_ROSEWOOD, WOOD::ALDER);
 }
 
 int main()
