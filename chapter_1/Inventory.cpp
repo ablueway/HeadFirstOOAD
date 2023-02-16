@@ -1,5 +1,5 @@
 #include "inventory.h"
-
+#include <algorithm>
 Inventory::Inventory() = default; 
 Inventory::~Inventory() = default;
  	
@@ -22,7 +22,11 @@ Guitar Inventory::search(Guitar& guitarWantToBuy) {
 	 
 	for (auto& g :guitars) {
 		if (g.getBuilder() != guitarWantToBuy.getBuilder()) { continue; }
-		if (g.getModel() != guitarWantToBuy.getModel()) { continue; }
+		std::string s1 = g.getModel();
+		std::string s2 = guitarWantToBuy.getModel();
+		std::for_each(s1.begin(), s1.end(), [](char & c) { c = ::tolower(c); });
+		std::for_each(s2.begin(), s2.end(), [](char & c) { c = ::tolower(c); });
+		if ( s1 != s2) { continue; }
 		if (g.getType() != guitarWantToBuy.getType()) { continue; }
 		if (g.getBackWood() != guitarWantToBuy.getBackWood()) { continue; }
 		if (g.getTopWood() != guitarWantToBuy.getTopWood()) { continue; }	
