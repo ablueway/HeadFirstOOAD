@@ -17,10 +17,10 @@ Guitar Inventory::getGuitar(const std::string& sn) {
 	return {};
  }
 
-Guitar Inventory::search(Guitar& guitarWantToBuy) {
+std::vector<Guitar> Inventory::search(Guitar& guitarWantToBuy) {
 	if (guitars.size() == 0) { return {}; }
-	 
-	for (auto& g :guitars) {
+	std::vector<Guitar> ans; 
+	for (auto& g : guitars) {
 		if (g.getBuilder() != guitarWantToBuy.getBuilder()) { continue; }
 		std::string s1 = g.getModel();
 		std::string s2 = guitarWantToBuy.getModel();
@@ -30,8 +30,8 @@ Guitar Inventory::search(Guitar& guitarWantToBuy) {
 		if (g.getType() != guitarWantToBuy.getType()) { continue; }
 		if (g.getBackWood() != guitarWantToBuy.getBackWood()) { continue; }
 		if (g.getTopWood() != guitarWantToBuy.getTopWood()) { continue; }	
-		return g;					
-	}		
-	return {};
+		ans.push_back(g);					
+	}	
+	return ans;
 }
 	  	

@@ -9,7 +9,7 @@ class Inventory {
  	void addGuitar(std::string sn, double price, BUILDER builder, std::string model, TYPE type, WOOD backWood, WOOD topWood);
  	Guitar getGuitar(const std::string& sn);
 
-	Guitar search(Guitar& guitarWantToBuy);
+	std::vector<Guitar> search(Guitar& guitarWantToBuy);
 	  	
  private:
 	std::vector<Guitar> guitars;
